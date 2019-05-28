@@ -12,4 +12,7 @@ export class LayoutComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSignOut() {
+    console.log('[MenuComponent][onSignOut]');
+  }
 }

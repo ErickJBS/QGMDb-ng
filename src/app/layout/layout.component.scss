@@ -1,10 +1,39 @@
-.content {
-  flex-grow: 1;
-  padding: 2vh 5vw;
-}
-
 .page-content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+mat-toolbar {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2 !important;
+  top: 0;
+}
+
+.header-img {
+  width: 135px;
+  margin-left: 15px;
+}
+
+mat-sidenav-container {
+  flex-grow: 1;
+  //z-index: -1 !important;
+
+  mat-sidenav {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  mat-sidenav-content {
+    padding: 2vh 5vw;
+  }
+
+  mat-icon {
+    padding-right: 15px;
+  }
+}
+
+.active {
+  background: #03a2eA !important;
 }

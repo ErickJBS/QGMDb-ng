@@ -3,14 +3,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 import { DataService } from '@services/data.service';
 import { FooterComponent } from './layout/footer/footer.component';
-import { HeaderComponent } from './layout/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { EditorComponent } from './components/editor/editor.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
@@ -24,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -31,13 +34,15 @@ import { MatSortModule } from '@angular/material/sort';
     DashboardComponent,
     MovieDetailComponent,
     FooterComponent,
-    HeaderComponent,
     LayoutComponent,
+    MoviesComponent,
+    EditorComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FlexLayoutModule,
     MatSnackBarModule,
     MatCardModule,
     MatFormFieldModule,
@@ -49,7 +54,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatSelectModule,
     MatTableModule,
     MatListModule,
-    MatSortModule
+    MatSortModule,
+    MatSidenavModule
   ],
   providers: [ DataService ],
   bootstrap: [AppComponent]
