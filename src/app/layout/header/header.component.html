@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img class="header-img" src="">
+    <span class="spacer"></span>
+    <mat-icon class="header-icon">notifications</mat-icon>
+    <span *ngIf="identifiedUser" class="user-identifier">{{ identifiedUser }}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<app-menu></app-menu>
