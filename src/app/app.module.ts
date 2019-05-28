@@ -10,7 +10,6 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
 import { DataService } from '@services/data.service';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
-import { MenuComponent } from './layout/menu/menu.component';
 import { LayoutComponent } from './layout/layout.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -33,7 +32,6 @@ import { MatSortModule } from '@angular/material/sort';
     MovieDetailComponent,
     FooterComponent,
     HeaderComponent,
-    MenuComponent,
     LayoutComponent,
   ],
   imports: [

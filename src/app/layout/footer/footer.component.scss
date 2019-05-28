@@ -1,0 +1,15 @@
+@mixin footer-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  .footer {
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 45px;
+    line-height:45px; /* Vertically center the text there */
+    background-color: mat-color($primary);
+    text-align: center;
+    color: white;
+  }
+
+}

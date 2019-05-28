@@ -1,4 +1,9 @@
-div.sticky {
+.header-img {
+  width: 135px;
+  fill: #fff;
+}
+
+.sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -9,5 +14,5 @@ div.sticky {
 }
 
 .active {
-  background: #ebebeb;
+  background: #03a2eA;
 }

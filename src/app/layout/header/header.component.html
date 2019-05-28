@@ -1,9 +1,12 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="sticky" color="primary" class="mat-elevation-z4">
   <mat-toolbar-row>
-    <img class="header-img" src="">
-    <span class="spacer"></span>
-    <mat-icon class="header-icon">notifications</mat-icon>
+    <img class="header-img" src="assets/img/qgmdb-logo-light.svg">
+    <span class="flex-spacer"></span>
+    <button mat-button [routerLink]="['#']" routerLinkActive="active">Opción 1</button>
+    <button mat-button [routerLink]="['#']" routerLinkActive="active">Opción 2</button>
+    <button mat-button (click)="onSignOut()">
+      <mat-icon>input</mat-icon>
+    </button>
     <span *ngIf="identifiedUser" class="user-identifier">{{ identifiedUser }}</span>
   </mat-toolbar-row>
 </mat-toolbar>
-<app-menu></app-menu>
