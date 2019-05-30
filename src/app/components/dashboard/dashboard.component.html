@@ -4,11 +4,11 @@
 <mat-divider></mat-divider>
 <div class="container">
   <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="16px grid">
-    <div class="grid-item" fxFlex.gt-xs="50%" fxFlex.gt-md="25%" *ngFor="let f of functions">
+    <div class="grid-item" fxFlex.gt-xs="50%" fxFlex.gt-sm="33%" *ngFor="let f of functions">
       <mat-card>
         <mat-card-header>
           <!--   movieId: 104 -->
-          <mat-card-title> {{ f.movie.movieTitle }} ({{ f.movie.releaseDate | date : 'yyyy' }}) </mat-card-title>
+          <mat-card-title><a [routerLink]="['/detail', f.movie.movieId]">{{ f.movie.movieTitle }} ({{ f.movie.releaseDate | date : 'yyyy' }}) </a></mat-card-title>
           <mat-card-subtitle> {{ f.functionDate | date }}</mat-card-subtitle>
           <mat-card-subtitle>
             <mat-icon [inline]="true">location_on</mat-icon> {{ f.location }}
