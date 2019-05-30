@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '@components/login/login.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-layout',
@@ -7,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
-  onSignOut() {
-    console.log('[MenuComponent][onSignOut]');
+  openLoginForm() {
+    this.dialog.open(LoginComponent);
   }
 }

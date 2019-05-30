@@ -11,7 +11,7 @@
         <a mat-button [routerLink]="['/dashboard/0']" routerLinkActive="active">Principal</a>
         <a mat-button [routerLink]="['/movies/0']" routerLinkActive="active">Peliculas</a>
         <!--<a mat-button [routerLink]="['/editor']" routerLinkActive="active">Editor</a>-->
-        <a mat-button (click)="onSignOut()">
+        <a mat-button (click)="openLoginForm()">
           <mat-icon>input</mat-icon>
         </a>
       </div>
@@ -28,7 +28,7 @@
           <mat-icon>movie</mat-icon> Peliculas </a>
         <!--<a mat-list-item [routerLink]="['/editor']" routerLinkActive="active">
           <mat-icon>create</mat-icon> Editor </a>-->
-        <a mat-list-item (click)="onSignOut()">
+        <a mat-list-item (click)="openLoginForm()">
           <mat-icon>input</mat-icon> Salir
         </a>
       </mat-nav-list>

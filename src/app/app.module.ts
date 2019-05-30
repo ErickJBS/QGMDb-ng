@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DataService } from '@services/data.service';
+import { AuthService } from '@services/auth.service';
 import { FooterComponent } from './layout/footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { LoginComponent } from './components/login/login.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
@@ -30,6 +32,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,7 @@ import { MatChipsModule } from '@angular/material/chips';
     LayoutComponent,
     MoviesComponent,
     EditorComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +67,15 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSidenavModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule,
+    FormsModule,
+    MatCheckboxModule
   ],
-  providers: [ DataService ],
+  providers: [ DataService, AuthService ],
+  entryComponents: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
