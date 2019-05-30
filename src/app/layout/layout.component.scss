@@ -18,15 +18,10 @@ mat-toolbar {
 
 mat-sidenav-container {
   flex-grow: 1;
-  //z-index: -1 !important;
 
   mat-sidenav {
     width: 60%;
     max-width: 400px;
-  }
-
-  mat-sidenav-content {
-    padding: 2vh 5vw;
   }
 
   mat-icon {

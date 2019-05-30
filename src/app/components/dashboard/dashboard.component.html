@@ -1,3 +1,25 @@
-<p>
-  dashboard works!
-</p>
+<div class="page-title">
+  <p class="mat-display-1"><mat-icon color="primary" inline="true">local_play</mat-icon> Funciones</p>
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="16px grid">
+    <div class="grid-item" fxFlex.gt-xs="50%" fxFlex.gt-md="25%" *ngFor="let f of functions">
+      <mat-card>
+        <mat-card-header>
+          <!--   movieId: 104 -->
+          <mat-card-title> {{ f.movie.movieTitle }} ({{ f.movie.releaseDate | date : 'yyyy' }}) </mat-card-title>
+          <mat-card-subtitle> {{ f.functionDate | date }}</mat-card-subtitle>
+          <mat-card-subtitle>
+            <mat-icon [inline]="true">location_on</mat-icon> {{ f.location }}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- cover: -->
+          <p>Duración: {{ f.movie.duration }} minutos</p>
+          <p class="muted-text"> {{ f.movie.movieAbstract | slice : 0 : 200 }}... </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

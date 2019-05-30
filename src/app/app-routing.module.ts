@@ -7,15 +7,15 @@ import { MovieDetailComponent } from '@components/movie-detail/movie-detail.comp
 import { EditorComponent } from '@components/editor/editor.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard/0', pathMatch: 'full' },
   {
     path: '', component: LayoutComponent, children: [
+      { path: 'dashboard/:page', component: DashboardComponent },
       {
-        path: 'dashboard', component: DashboardComponent, children: [
-          { path: 'detail:id', component: MovieDetailComponent }
+        path: 'movies:page', component: MoviesComponent, children: [
+          { path: 'detail/:id', component: MovieDetailComponent }
         ]
       },
-      { path: 'movies', component: MoviesComponent },
       { path: 'editor', component: EditorComponent },
     ]
   },

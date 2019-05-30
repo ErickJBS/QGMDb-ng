@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DataService } from '@services/data.service';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -55,7 +56,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatTableModule,
     MatListModule,
     MatSortModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
   providers: [ DataService ],
   bootstrap: [AppComponent]
