@@ -15,7 +15,9 @@
   display: flex;
 }
 
-img {
+.cover {
+  width: 215px;
+  height: 290px;
   padding: 8px 32px 8px 8px;
 }
 
@@ -38,4 +40,8 @@ img {
   padding-right: 16px;
   padding-left: 16px;
   padding-bottom: 16px;
+}
+
+.review-card {
+  padding: 16px 32px;
 }

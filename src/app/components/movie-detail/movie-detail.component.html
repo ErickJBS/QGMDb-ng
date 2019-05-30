@@ -15,8 +15,8 @@
             {{ movie.movieTitle }} ({{ movie.releaseDate | date : 'yyyy' }})
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content fxLayout="row" fxLayout.xs="column">
-          <img src="{{movie.cover}}" alt="{{movie.movieTitle}}">
+        <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+          <img class="cover" src="{{movie.cover}}" alt="{{movie.movieTitle}}">
           <div>
             <p>Duración: {{ movie.duration }} minutos</p>
             <p class="muted-text"> {{ movie.movieAbstract }} </p>
@@ -58,6 +58,24 @@
           </mat-card-content>
         </mat-card>
       </div>
+    </div>
+
+    <div fxFlex>
+      <mat-card class="review-card">
+        <p class="mat-subheading-2">Deja tu reseña</p>
+        <mat-card-content fxLayout="column">
+          <mat-form-field fxFlex>
+            <textarea matInput maxlength="500" rows="5" [(ngModel)]="content"></textarea>
+          </mat-form-field>
+
+        </mat-card-content>
+        <div fxLayout="row">
+          <span class="flex-spacer"></span>
+          <p>Calificación:</p>
+          <mat-slider fxFlex="20%" min="0" max="5" step="1" value="3" [(ngModel)]="rating"></mat-slider>
+          <button color="primary" mat-button (click)="sendReview()">Enviar</button>
+        </div>
+      </mat-card>
     </div>
 
   </div>

@@ -35,7 +35,8 @@ export class AuthService {
 
   getUser() {
     const data: any = this.getToken();
-    return data.user;
+    if (data)
+      return data.user;
   }
 
   getName() {

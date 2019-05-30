@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '@services/data.service';
+import { AuthService } from '@services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,10 +16,14 @@ export class MovieDetailComponent implements OnInit {
   genres: any;
   reviews: any;
   id: any;
+  rating: number;
+  content: string;
 
   constructor(
     private route: ActivatedRoute,
-    private data: DataService
+    private data: DataService,
+    private auth: AuthService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -34,6 +40,23 @@ export class MovieDetailComponent implements OnInit {
 
   private stars(n: number) {
     return Array(n);
+  }
+
+  sendReview() {
+    const user = this.auth.getUser();
+    if (!user) {
+      this.snackBar.open('Inicie sesión para hacer esto', 'Aceptar', {
+        duration: 3000
+      });
+      return;
+    }
+    this.data.publishReview(user, this.id, this.rating, this.content).subscribe(result => {
+      if (result) {
+        this.snackBar.open('Nueva reseña añadida', 'Aceptar', {
+          duration: 3000
+        });
+      }
+    })
   }
 
 }

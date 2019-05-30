@@ -35,6 +35,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { FormsModule } from '@angular/forms';
     MatChipsModule,
     MatDialogModule,
     FormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSliderModule
   ],
   providers: [ DataService, AuthService ],
   entryComponents: [

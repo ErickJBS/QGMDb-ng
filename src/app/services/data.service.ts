@@ -50,7 +50,8 @@ export class DataService {
   }
 
   publishReview(user: string, movie: number, rating: number, content: string) {
-
+    const url = `${environment.apiServer}/reviews`;
+    return this.http.post<any>(url, { user, movie, rating, content });
   }
 
   private getRequestPromise(route: string, params: any) {
