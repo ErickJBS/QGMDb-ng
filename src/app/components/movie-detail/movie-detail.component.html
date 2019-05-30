@@ -42,5 +42,23 @@
         </mat-card-content>
       </mat-card>
     </div>
+
+    <div *ngIf="reviews" fxLayout="column" fxLayoutGap="16px">
+      <p class="mat-subheading-2">Reseñas</p>
+      <div *ngFor="let review of reviews" fxFlex>
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <p class="username"> {{ review.userName }}</p>
+              <p class="rating">
+                <mat-icon inline="true" *ngFor="let i of stars(review.rating)">star</mat-icon>
+                <mat-icon inline="true" *ngFor="let i of stars(5-review.rating)">star_border</mat-icon> </p>
+            </div>
+            <p class="muted-text"> {{ review.reviewContent }} </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
   </div>
 </div>

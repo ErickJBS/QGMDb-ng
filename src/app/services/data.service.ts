@@ -44,8 +44,13 @@ export class DataService {
     return this.getRequestPromise('movie/people', params);
   }
 
-  getMovieReviews() {
-    // TODO implementar en el backend...
+  getMovieReviews(id: number) {
+    const params = { id: id };
+    return this.getRequestPromise('reviews', params);
+  }
+
+  publishReview(user: string, movie: number, rating: number, content: string) {
+
   }
 
   private getRequestPromise(route: string, params: any) {

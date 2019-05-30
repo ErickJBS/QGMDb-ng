@@ -18,3 +18,24 @@
 img {
   padding: 8px 32px 8px 8px;
 }
+
+@mixin text-theme($theme) {
+  $primary: map-get($theme, primary);
+  .username {
+    font-size: 1.1em;
+    color: mat-color($primary);
+    margin-right: 16px;
+  }
+}
+
+.rating {
+  color: #ffd700;
+}
+
+.muted-text {
+  color: #777;
+  text-align: justify;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+}
