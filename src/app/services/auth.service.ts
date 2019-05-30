@@ -9,6 +9,9 @@ import { map } from 'rxjs/operators';
 export class AuthService {
   token: any;
 
+  //Remove later
+  layout: any;
+
   constructor(private http: HttpClient) {
   }
 
@@ -37,7 +40,8 @@ export class AuthService {
 
   getName() {
     const data: any = this.getToken();
-    return data.result;
+    if (data)
+      return data.result;
   }
 
   getToken() {
@@ -58,5 +62,13 @@ export class AuthService {
     token.expirationTime = expiration;
     this.token = token;
     localStorage.setItem('currentUser', JSON.stringify(token));
+
+    //Remove later
+    this.layout.setUser(token.result);
+  }
+
+  // Remove later
+  setLayout(layout: any) {
+    this.layout = layout;
   }
 }
