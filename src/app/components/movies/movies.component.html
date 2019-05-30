@@ -9,8 +9,8 @@
   <div fxLayout="column" class="list" fxLayoutGap="8px">
     <mat-list role="list">
       <mat-list-item *ngFor="let movie of movies">
-        <h4 mat-line>{{ movie.movieTitle }} ({{ movie.releaseDate | date : 'yyyy' }})</h4>
-        <p mat-line> {{ movie.updated | date }} </p>
+        <h4 mat-line><a [routerLink]="['/detail', movie.movieId]">
+          {{ movie.movieTitle }} ({{ movie.releaseDate | date : 'yyyy' }})</a></h4>
         <mat-divider></mat-divider>
       </mat-list-item>
     </mat-list>
