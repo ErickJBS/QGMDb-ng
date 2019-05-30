@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatListModule,
     MatSortModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
   ],
   providers: [ DataService ],
   bootstrap: [AppComponent]

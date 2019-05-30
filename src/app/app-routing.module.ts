@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
       { path: 'dashboard/:page', component: DashboardComponent },
-      { path: 'movies:page', component: MoviesComponent },
+      { path: 'movies/:page', component: MoviesComponent },
       { path: 'detail/:id', component: MovieDetailComponent },
       { path: 'editor', component: EditorComponent },
     ]

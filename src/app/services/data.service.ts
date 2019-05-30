@@ -17,6 +17,18 @@ export class DataService {
     return this.getRequestPromise('shows', params);
   }
 
+  getMovieCatalog(lower: number, upper: number) {
+    const params = {
+      lower: lower,
+      upper: upper
+    };
+    return this.getRequestPromise('catalog', params);
+  }
+
+  getCatalogSize() {
+    return this.getRequestPromise('length', null);
+  }
+
   private getRequestPromise(route: string, params: any) {
     const url = `${environment.apiServer}/${route}`;
     console.log(url);
