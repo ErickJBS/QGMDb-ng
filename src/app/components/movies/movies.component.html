@@ -9,6 +9,7 @@
   <div fxLayout="column" class="list" fxLayoutGap="8px">
     <mat-list role="list">
       <mat-list-item *ngFor="let movie of movies">
+        <img src="{{movie.cover}}" alt="{{movie.movieTitle}}">
         <h4 mat-line><a [routerLink]="['/detail', movie.movieId]">
           {{ movie.movieTitle }} ({{ movie.releaseDate | date : 'yyyy' }})</a></h4>
         <mat-divider></mat-divider>

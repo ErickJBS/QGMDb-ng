@@ -15,12 +15,15 @@
             {{ movie.movieTitle }} ({{ movie.releaseDate | date : 'yyyy' }})
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-          <p>Duración: {{ movie.duration }} minutos</p>
-          <p class="muted-text"> {{ movie.movieAbstract }} </p>
-          <mat-chip-list>
-            <mat-chip *ngFor="let genre of genres" color="primary" selected>{{genre}}</mat-chip>
-          </mat-chip-list>
+        <mat-card-content fxLayout="row" fxLayout.xs="column">
+          <img src="{{movie.cover}}" alt="{{movie.movieTitle}}">
+          <div>
+            <p>Duración: {{ movie.duration }} minutos</p>
+            <p class="muted-text"> {{ movie.movieAbstract }} </p>
+            <mat-chip-list>
+              <mat-chip *ngFor="let genre of genres" color="primary" selected>{{genre}}</mat-chip>
+            </mat-chip-list>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
