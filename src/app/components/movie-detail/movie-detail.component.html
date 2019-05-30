@@ -1,3 +1,43 @@
-<p>
-  movie-detail works!
-</p>
+<div class="page-title">
+  <p class="mat-display-1" *ngIf="movie">
+    <mat-icon color="primary" inline="true">whatshot</mat-icon>
+    {{ movie.movieTitle }}
+    <span class="mat-title">({{ movie.releaseDate | date : 'yyyy' }})</span>
+  </p>
+</div>
+<mat-divider></mat-divider>
+<div class="container">
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="16px grid">
+    <div class="grid-item" *ngIf="movie" fxFlex.gt-xs="100%" fxFlex.gt-sm="60%">
+      <mat-card >
+        <mat-card-header>
+          <mat-card-title>
+            {{ movie.movieTitle }} ({{ movie.releaseDate | date : 'yyyy' }})
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Duración: {{ movie.duration }} minutos</p>
+          <p class="muted-text"> {{ movie.movieAbstract }} </p>
+          <mat-chip-list>
+            <mat-chip *ngFor="let genre of genres" color="primary" selected>{{genre}}</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="people" fxFlex.gt-xs="60%" fxFlex.gt-sm="40%">
+      <mat-card>
+        <mat-card-content fxLayout="row">
+          <div fxFlex>
+            <mat-card-subtitle> Director(es) </mat-card-subtitle>
+            <p *ngFor="let director of people.directors">{{director}}</p>
+          </div>
+          <div fxFlex>
+            <mat-card-subtitle> Actores </mat-card-subtitle>
+            <p *ngFor="let actor of people.actors">{{actor}}</p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
